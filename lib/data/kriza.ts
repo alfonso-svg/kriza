@@ -93,6 +93,9 @@ export const dailyData: DailyInsight[] = [
   { date:"2026-06-17", spend:36.76, impressions: 36675, clicks:1318, ctr:3.59, purchases:10, roas: 9.76, valorConversiones: 358.72, visitas: 652, carritos: 68, pagos: 35 },
   { date:"2026-06-18", spend:34.33, impressions: 29915, clicks:1115, ctr:3.73, purchases:12, roas:14.03, valorConversiones: 481.52, visitas: 609, carritos: 63, pagos: 32 },
   { date:"2026-06-19", spend:10.29, impressions:  8901, clicks: 291, ctr:3.27, purchases: 2, roas: 6.35, valorConversiones:  65.35, visitas: 183, carritos: 19, pagos: 10 },
+  { date:"2026-06-20", spend:30.94, impressions: 21177, clicks: 909, ctr:4.29, purchases: 5, roas: 6.15, valorConversiones: 190.28, visitas: 549, carritos: 57, pagos: 29 },
+  { date:"2026-06-21", spend:37.32, impressions: 31059, clicks:1170, ctr:3.77, purchases: 5, roas: 4.67, valorConversiones: 174.28, visitas: 662, carritos: 69, pagos: 35 },
+  { date:"2026-06-22", spend:35.62, impressions: 30785, clicks:1244, ctr:4.04, purchases: 8, roas: 7.92, valorConversiones: 282.11, visitas: 632, carritos: 66, pagos: 33 },
 ]
 
 // Período jun 1–19 (this_month) · fuente: Meta API vía MCP (actualizado 19 jun 2026)
