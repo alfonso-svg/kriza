@@ -67,13 +67,4 @@ export const adsJunio: AdResult[] = [
     valor:    110.99,
     roas:      10.50,
   },
-  {
-    name:    "Ad 70 · Video · Nueva Colección Mayo",
-    image:   "/Ads Kriza/Ad 70 - Video - Nueva Colección Mayo.png",
-    spend:     6.64,
-    ctr:       4.07,
-    compras:      2,
-    valor:     88.44,
-    roas:      13.32,
-  },
 ]
