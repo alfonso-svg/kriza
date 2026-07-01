@@ -73,7 +73,7 @@ export const dailyData: DailyInsight[] = [
   { date:"2026-05-29", spend:34.42, impressions: 30521, clicks:1181, ctr:4.99, purchases: 8, roas:11.41, valorConversiones: 392.73, visitas: 775, carritos: 78, pagos: 40 },
   { date:"2026-05-30", spend:34.21, impressions: 31159, clicks:1121, ctr:4.98, purchases:19, roas:24.24, valorConversiones: 829.25, visitas: 770, carritos: 78, pagos: 39 },
   { date:"2026-05-31", spend:46.24, impressions: 54789, clicks:1700, ctr:4.71, purchases:11, roas: 8.46, valorConversiones: 391.19, visitas:1041, carritos:105, pagos: 53 },
-  // ── Jun 1–19 (mensual jun: v=9810 c=1017 p=521 spend=553.0) ─────────────
+  // ── Jun 1–28 (mensual jun: v=15729 c=1671 p=871 spend=969.3) ────────────
   { date:"2026-06-01", spend:37.40, impressions: 44496, clicks:1284, ctr:4.32, purchases:16, roas:16.13, valorConversiones: 603.26, visitas: 663, carritos: 69, pagos: 35 },
   { date:"2026-06-02", spend:33.04, impressions: 39187, clicks: 967, ctr:3.97, purchases:12, roas:11.75, valorConversiones: 388.22, visitas: 586, carritos: 61, pagos: 31 },
   { date:"2026-06-03", spend:35.17, impressions: 39780, clicks:1135, ctr:4.22, purchases: 6, roas: 7.05, valorConversiones: 247.95, visitas: 624, carritos: 65, pagos: 33 },
@@ -96,6 +96,12 @@ export const dailyData: DailyInsight[] = [
   { date:"2026-06-20", spend:30.94, impressions: 21177, clicks: 909, ctr:4.29, purchases: 5, roas: 6.15, valorConversiones: 190.28, visitas: 549, carritos: 57, pagos: 29 },
   { date:"2026-06-21", spend:37.32, impressions: 31059, clicks:1170, ctr:3.77, purchases: 5, roas: 4.67, valorConversiones: 174.28, visitas: 662, carritos: 69, pagos: 35 },
   { date:"2026-06-22", spend:35.62, impressions: 30785, clicks:1244, ctr:4.04, purchases: 8, roas: 7.92, valorConversiones: 282.11, visitas: 632, carritos: 66, pagos: 33 },
+  { date:"2026-06-23", spend:35.58, impressions: 25688, clicks: 968, ctr:3.77, purchases:12, roas:12.41, valorConversiones: 441.55, visitas: 577, carritos: 61, pagos: 32 },
+  { date:"2026-06-24", spend:31.65, impressions: 26416, clicks:1046, ctr:3.96, purchases:12, roas:14.13, valorConversiones: 447.21, visitas: 514, carritos: 55, pagos: 28 },
+  { date:"2026-06-25", spend:36.95, impressions: 63513, clicks:1450, ctr:2.28, purchases:11, roas:10.95, valorConversiones: 404.60, visitas: 600, carritos: 64, pagos: 33 },
+  { date:"2026-06-26", spend:36.78, impressions: 39580, clicks:1330, ctr:3.36, purchases:13, roas:10.95, valorConversiones: 402.74, visitas: 597, carritos: 63, pagos: 33 },
+  { date:"2026-06-27", spend:38.02, impressions: 69400, clicks:1639, ctr:2.36, purchases: 5, roas: 4.23, valorConversiones: 160.82, visitas: 617, carritos: 66, pagos: 34 },
+  { date:"2026-06-28", spend: 4.23, impressions:  4796, clicks: 209, ctr:4.36, purchases: 1, roas: 5.05, valorConversiones:  21.36, visitas:  69, carritos:  7, pagos:  4 },
 ]
 
 // Período jun 1–19 (this_month) · fuente: Meta API vía MCP (actualizado 19 jun 2026)
