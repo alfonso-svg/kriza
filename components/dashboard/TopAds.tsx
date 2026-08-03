@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { type AdResult } from "@/lib/data/adsJunio"
+import { type AdResult } from "@/lib/data/adsJulio"
 
 const fmtUSD = (n: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(n)

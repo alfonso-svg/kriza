@@ -22,7 +22,7 @@ import { TablaNegocio } from "@/components/dashboard/TablaNegocio"
 import { ComprasRoasChart } from "@/components/charts/ComprasRoasChart"
 import { CarritosComprasChart } from "@/components/charts/CarritosComprasChart"
 import { ConversionWebChart } from "@/components/charts/ConversionWebChart"
-import { adsJunio } from "@/lib/data/adsJunio"
+import { adsJulio } from "@/lib/data/adsJulio"
 import type { DailyInsight } from "@/lib/meta/types"
 
 // ── Formatters ───────────────────────────────────────────────────────────────
@@ -521,12 +521,12 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        {/* Mejores ads de junio */}
+        {/* Mejores ads de julio */}
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-            Mejores ads · Junio 2026
+            Mejores ads · Julio 2026
           </p>
-          <TopAds ads={adsJunio} />
+          <TopAds ads={adsJulio} />
         </div>
 
         {/* Histórico mensual */}
