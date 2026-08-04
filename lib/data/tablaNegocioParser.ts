@@ -2,7 +2,7 @@ export type TablaNegocioRow = {
   mes: string
   convShopify: number
   convReales: number
-  ratioConv: number       // convReales / convShopify × 100
+  ratioConv: number       // comprasPerdidas / convShopify × 100 (% de compras perdidas)
   ingShopify: number
   ingReales: number
   ratioIng: number        // ingReales / ingShopify × 100
@@ -53,7 +53,7 @@ export function parseTablaNegocio(text: string): TablaNegocioRow[] {
       mes:             mes.charAt(0).toUpperCase() + mes.slice(1).toLowerCase(),
       convShopify,
       convReales,
-      ratioConv:       convShopify > 0 ? (convReales / convShopify) * 100 : 0,
+      ratioConv:       convShopify > 0 ? (comprasPerdidas / convShopify) * 100 : 0,
       ingShopify,
       ingReales,
       ratioIng:        ingShopify > 0 ? (ingReales / ingShopify) * 100 : 0,
@@ -64,7 +64,7 @@ export function parseTablaNegocio(text: string): TablaNegocioRow[] {
   return rows
 }
 
-// Umbrales P33/P67 dinámicos basados en el histórico de ratioConv
+// Umbrales P33/P67 dinámicos basados en el histórico de ratioConv (% de compras perdidas)
 export function computeSemaforoThresholds(rows: TablaNegocioRow[]): [number, number] {
   const sorted = rows.map(r => r.ratioConv).sort((a, b) => a - b)
   const p33 = sorted[Math.floor(sorted.length * 0.33)] ?? 50

@@ -16,10 +16,11 @@ const SEMAFORO: Record<SemaforoLevel, { color: string; bg: string; label: string
   rojo:     { color: "#dc2626", bg: "#fee2e2", label: "Bajo"    },
 }
 
+// ratioConv = % de compras perdidas → menor es mejor
 function getSemaforoLevel(ratio: number, thresholds: [number, number]): SemaforoLevel {
   const [p33, p67] = thresholds
-  if (ratio >= p67) return "verde"
-  if (ratio >= p33) return "amarillo"
+  if (ratio <= p33) return "verde"
+  if (ratio <= p67) return "amarillo"
   return "rojo"
 }
 
@@ -42,7 +43,7 @@ export function TablaNegocio({ rows }: Props) {
               <th className="text-left   px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Mes</th>
               <th className="text-right  px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Conv. Meta</th>
               <th className="text-right  px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Conv. Reales</th>
-              <th className="text-center px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Ratio conv.</th>
+              <th className="text-center px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">% Perdidas</th>
               <th className="text-right  px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Ing. Meta</th>
               <th className="text-right  px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Ing. Reales</th>
               <th className="text-right  px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Ratio ing.</th>
@@ -85,11 +86,11 @@ export function TablaNegocio({ rows }: Props) {
       </div>
       {/* Leyenda semáforo */}
       <div className="flex items-center gap-4 text-[11px] text-muted-foreground px-1">
-        <span className="font-medium text-gray-400">Semáforo conv.:</span>
+        <span className="font-medium text-gray-400">Semáforo % perdidas:</span>
         {(["verde", "amarillo", "rojo"] as SemaforoLevel[]).map(l => (
           <span key={l} className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: SEMAFORO[l].color }} />
-            {SEMAFORO[l].label} {l === "verde" ? `(≥${thresholds[1].toFixed(0)}%)` : l === "amarillo" ? `(${thresholds[0].toFixed(0)}–${thresholds[1].toFixed(0)}%)` : `(<${thresholds[0].toFixed(0)}%)`}
+            {SEMAFORO[l].label} {l === "verde" ? `(≤${thresholds[0].toFixed(0)}%)` : l === "amarillo" ? `(${thresholds[0].toFixed(0)}–${thresholds[1].toFixed(0)}%)` : `(>${thresholds[1].toFixed(0)}%)`}
           </span>
         ))}
       </div>
