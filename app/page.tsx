@@ -22,7 +22,7 @@ import { TablaNegocio } from "@/components/dashboard/TablaNegocio"
 import { ComprasRoasChart } from "@/components/charts/ComprasRoasChart"
 import { CarritosComprasChart } from "@/components/charts/CarritosComprasChart"
 import { ConversionWebChart } from "@/components/charts/ConversionWebChart"
-import { adsJulio } from "@/lib/data/adsJulio"
+import { adsAgosto } from "@/lib/data/adsAgosto"
 import type { DailyInsight } from "@/lib/meta/types"
 
 // ── Formatters ───────────────────────────────────────────────────────────────
@@ -521,12 +521,42 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        {/* Mejores ads de julio */}
+        {/* Análisis del período */}
+        <Card className="border-0 shadow-sm">
+          <CardHeader className="pb-1 pt-4 px-5">
+            <CardTitle className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+              Análisis del período · 1 – 31 ago 2026
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="px-5 pb-5 pt-0">
+            <p className="mb-4 text-sm leading-relaxed text-gray-700">
+              Agosto cerró con {fmtUSD(1132.70)} de gasto (+3,9% vs. julio) pero con caída en compras (280 vs. 343, -18,4%) y en ROAS (8,96x vs. 11,35x, -21%) — la cuenta sostuvo la inversión pero perdió eficiencia. El embudo muestra el mismo patrón en cada etapa: 976.644 impresiones → 23.365 visitas a landing (CTR 4,39%) → 1.545 carritos (6,6% de las visitas) → 884 checkouts iniciados (57,2% de los carritos) → 280 compras (31,7% de los checkouts, conversión web de 1,20% sobre visitas). Advantage+ concentró el 76,8% del gasto y el 76% de las compras, con Tráfico Frío - Test Ads sosteniendo el ROAS más alto de la cuenta.
+            </p>
+            <ul className="space-y-3">
+              {[
+                { emoji: "🟡", name: "Advantage+ (catálogo dinámico)", text: "Motor principal de la cuenta: $869,83 de gasto (76,8% del total), 213 compras y ROAS 8,78x — el más bajo de las campañas con volumen real, arrastrando el promedio general de la cuenta a la baja. A nivel de ad, \"Ad 93 - Carrusel - All/Nuevo\" fue el mayor gasto individual ($370,14) dentro de esta campaña. Sugerencia: revisar el mix de producto que está priorizando el catálogo, dado que retargeting (Tráfico Caliente) y el test de frío convierten más barato." },
+                { emoji: "🟢", name: "Tráfico Caliente", text: "$155,26 de gasto, 44 compras, CPA $3,53 — el más bajo entre las campañas de volumen real, y ROAS 9,30x. Sigue siendo la campaña más consistente del set (retargeting sobre audiencia ya calificada)." },
+                { emoji: "🟢", name: "Tráfico Frío - Test Ads", text: "$76,69 de gasto, 22 compras, ROAS 13,37x — el más alto de toda la cuenta y con CPA $3,49, muy cerca del de Tráfico Caliente. Sigue corriendo como test pero el desempeño ya justifica evaluar subir presupuesto." },
+                { emoji: "⚪", name: "Tráfico Frío (regular)", text: "Sin gasto en agosto — se mantuvo completamente pausada, sin delivery en todo el mes." },
+                { emoji: "🟡", name: "Tráfico IG", text: "$30,92 de gasto, solo 1 compra (CPA $30,92, ROAS 1,27x). Es tráfico/awareness hacia Instagram, no está pensada para conversión directa — el número bajo es esperable, no una alerta de la campaña en sí." },
+              ].map(({ emoji, name, text }) => (
+                <li key={name} className="flex gap-3 text-sm leading-relaxed">
+                  <span className="mt-0.5 shrink-0">{emoji}</span>
+                  <p className="text-gray-700">
+                    <span className="font-semibold text-gray-900">{name}:</span>{" "}{text}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* Mejores ads de agosto */}
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-            Mejores ads · Julio 2026
+            Mejores ads · Agosto 2026
           </p>
-          <TopAds ads={adsJulio} />
+          <TopAds ads={adsAgosto} />
         </div>
 
         {/* Histórico mensual */}
