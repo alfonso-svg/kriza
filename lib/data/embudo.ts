@@ -52,17 +52,3 @@ export const FUNNEL_COMPARADO = [
   { paso: "Carritos",        jul: 10.7,  ago: 6.6  },
   { paso: "Pagos iniciados", jul: 6.4,   ago: 3.8  },
 ] as const
-
-export const EMBUDO_IMPACTO = {
-  carritosEsperados:   2266,
-  carritosPerdidos:    721,
-  comprasPerdidas:     130,
-  facturacionPerdida:  4700,
-  fugaPautaComparativa: 147,
-  multiplo:            32,
-}
-
-export const EMBUDO_NOTA_METODO =
-  "Método: carritos esperados de agosto = fichas vistas (34.443) × tasa ficha→carrito de julio (6,58%) = 2.266. " +
-  "Carritos perdidos = 2.266 esperados − 1.545 reales = 721. Compras perdidas = carritos perdidos × tasa carrito→compra de agosto (18,1%) ≈ 130. " +
-  "Facturación perdida = compras perdidas × ticket promedio ($36,22) ≈ $4.700."

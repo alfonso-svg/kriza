@@ -4,17 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { EmbudoTablaQuiebre } from "./EmbudoTablaQuiebre"
 import { EmbudoTablaMensual } from "./EmbudoTablaMensual"
 import { FunnelCompareChart } from "@/components/charts/FunnelCompareChart"
-import { EMBUDO_TITULAR, EMBUDO_BAJADA, EMBUDO_NOTA_METODO, FUNNEL_COMPARADO } from "@/lib/data/embudo"
-
-function StatTile({ label, value, sub }: { label: string; value: string; sub: string }) {
-  return (
-    <div className="rounded-lg border border-red-100 bg-red-50/40 px-4 py-3">
-      <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-400">{label}</p>
-      <p className="text-xl font-bold mt-0.5" style={{ color: "#dc2626" }}>{value}</p>
-      <p className="text-[11px] text-gray-500 mt-0.5">{sub}</p>
-    </div>
-  )
-}
+import { EMBUDO_TITULAR, EMBUDO_BAJADA, FUNNEL_COMPARADO } from "@/lib/data/embudo"
 
 export function EmbudoConversion() {
   return (
@@ -58,21 +48,6 @@ export function EmbudoConversion() {
           </p>
           <EmbudoTablaQuiebre />
         </div>
-
-        {/* Impacto destacado */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <StatTile label="Carritos perdidos"              value="721"    sub="si julio se hubiera sostenido" />
-          <StatTile label="Compras perdidas (aprox.)"       value="~130"   sub="al ratio carrito→compra de agosto" />
-          <StatTile label="Facturación perdida (aprox.)"    value="~$4.700" sub="ticket promedio $36,22" />
-        </div>
-        <p className="text-xs text-gray-500 leading-relaxed">
-          Si la tasa ficha→carrito de julio (6,58%) se hubiera sostenido en agosto, con 34.443 fichas vistas
-          habrían salido 2.266 carritos en vez de 1.545.
-        </p>
-
-        <p className="text-[10px] text-gray-400 leading-relaxed border-t border-gray-50 pt-3">
-          {EMBUDO_NOTA_METODO}
-        </p>
 
       </CardContent>
     </Card>
