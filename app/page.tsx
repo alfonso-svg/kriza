@@ -412,7 +412,7 @@ export default function DashboardPage() {
               change={changes.visitas}
             />
             <MetricCard
-              title={`Carritos · ${label}`}
+              title={`Carts · ${label}`}
               value={fmtNum(metrics.carritos)}
               subtitle="add to cart"
               icon={<ShoppingCart size={13} className={ICON} />}
