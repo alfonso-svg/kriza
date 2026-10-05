@@ -24,7 +24,7 @@ import { InventarioPar } from "@/components/dashboard/InventarioPar"
 import { ComprasRoasChart } from "@/components/charts/ComprasRoasChart"
 import { CarritosComprasChart } from "@/components/charts/CarritosComprasChart"
 import { ConversionWebChart } from "@/components/charts/ConversionWebChart"
-import { adsAgosto } from "@/lib/data/adsAgosto"
+import { adsSeptiembre } from "@/lib/data/adsSeptiembre"
 import type { DailyInsight } from "@/lib/meta/types"
 
 // ── Formatters ───────────────────────────────────────────────────────────────
@@ -523,12 +523,12 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        {/* Mejores ads de agosto */}
+        {/* Mejores ads de septiembre */}
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-            Mejores ads · Agosto 2026
+            Mejores ads · Septiembre 2026
           </p>
-          <TopAds ads={adsAgosto} />
+          <TopAds ads={adsSeptiembre} />
         </div>
 
         {/* Histórico mensual */}
