@@ -5,13 +5,14 @@ import { EMBUDO_QUIEBRE } from "@/lib/data/embudo"
 export function EmbudoTablaQuiebre() {
   return (
     <div className="overflow-x-auto rounded-lg border-2 border-red-100">
-      <table className="w-full text-sm min-w-[520px]">
+      <table className="w-full text-sm min-w-[600px]">
         <thead className="bg-red-50/60 border-b border-red-100">
           <tr>
             <th className="text-left  px-4 py-3 font-semibold text-gray-600">Paso del embudo</th>
             <th className="text-right px-4 py-3 font-semibold text-gray-600">Junio</th>
             <th className="text-right px-4 py-3 font-semibold text-gray-600">Julio</th>
             <th className="text-right px-4 py-3 font-semibold text-gray-600">Agosto</th>
+            <th className="text-right px-4 py-3 font-semibold text-gray-600">Septiembre</th>
             <th className="text-right px-4 py-3 font-semibold text-gray-600">Estado</th>
           </tr>
         </thead>
@@ -29,8 +30,11 @@ export function EmbudoTablaQuiebre() {
                 <td className={`px-4 py-3 text-right tabular-nums ${alert ? "font-bold text-red-700" : "text-gray-500"}`}>
                   {row.jul}
                 </td>
-                <td className={`px-4 py-3 text-right tabular-nums ${alert ? "text-base font-extrabold text-red-700" : "font-medium text-gray-700"}`}>
+                <td className={`px-4 py-3 text-right tabular-nums ${alert ? "font-bold text-red-700" : "text-gray-500"}`}>
                   {row.ago}
+                </td>
+                <td className={`px-4 py-3 text-right tabular-nums ${alert ? "text-base font-extrabold text-red-700" : "font-medium text-gray-700"}`}>
+                  {row.sep}
                 </td>
                 <td className="px-4 py-3 text-right">
                   <span
