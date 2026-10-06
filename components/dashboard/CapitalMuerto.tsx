@@ -65,10 +65,10 @@ export function CapitalMuerto() {
               <th className="text-left  px-3 py-2.5 font-semibold text-gray-500">Modelo</th>
               <th className="text-right px-3 py-2.5">
                 <SortBtn active={sort.key === "pares"} dir={sort.dir} onClick={() => toggle("pares")}>
-                  Pares 31 ago
+                  Pares 30 sep
                 </SortBtn>
               </th>
-              <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Vendidos ago</th>
+              <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Vendidos sep</th>
               <th className="text-right px-3 py-2.5">
                 <SortBtn active={sort.key === "rotacion"} dir={sort.dir} onClick={() => toggle("rotacion")}>
                   Rotación

@@ -21,8 +21,8 @@ export function Reposicion() {
               <th className="text-left  px-3 py-2.5 font-semibold text-gray-500">#</th>
               <th className="text-left  px-3 py-2.5 font-semibold text-gray-500">Modelo</th>
               <th className="text-right px-3 py-2.5 font-semibold text-gray-500">Rotación</th>
-              <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Stock 1 ago</th>
-              <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Stock 31 ago</th>
+              <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Stock 1 sep</th>
+              <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Stock 30 sep</th>
               <th className="text-left  px-3 py-2.5 font-semibold text-gray-500">Situación</th>
             </tr>
           </thead>

@@ -593,7 +593,7 @@ export default function DashboardPage() {
         {/* Rotación de inventario */}
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-            Rotación de inventario · Agosto 2026
+            Rotación de inventario · Septiembre 2026
           </p>
           <InventarioPar />
         </div>
