@@ -22,6 +22,7 @@ export const EMBUDO_MENSUAL: EmbudoMensualRow[] = [
   { metrica: "Fichas de producto vistas",  jun: "28.145",    jul: "29.118",    ago: "34.443",    sep: "30.477",    vsPrev: "−11,5%", highlight: "down"    },
   { metrica: "Carritos",                   jun: "1.671",     jul: "1.915",     ago: "1.545",     sep: "1.202",     vsPrev: "−22,2%", highlight: "down"    },
   { metrica: "Pagos iniciados",            jun: "871",       jul: "1.147",     ago: "884",       sep: "708",       vsPrev: "−19,9%", highlight: "down"    },
+  { metrica: "Compras",                    jun: "276",       jul: "343",       ago: "280",       sep: "206",       vsPrev: "−26,4%", highlight: "down"    },
   { metrica: "Costo por carrito",          jun: "$0,58",     jul: "$0,58",     ago: "$0,73",     sep: "$0,98",     vsPrev: "+34,2%", highlight: "neutral" },
   { metrica: "ROAS",                       jun: "10,74×",    jul: "11,08×",    ago: "8,96×",     sep: "6,44×",     vsPrev: "−28,1%", highlight: "down"    },
 ]
