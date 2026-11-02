@@ -11,7 +11,7 @@ const HIGHLIGHT_COLOR: Record<EmbudoMensualRow["highlight"], string> = {
 export function EmbudoTablaMensual() {
   return (
     <div className="overflow-x-auto rounded-md border border-gray-100">
-      <table className="w-full text-xs min-w-[640px]">
+      <table className="w-full text-xs min-w-[720px]">
         <thead className="bg-gray-50/60 border-b border-gray-100">
           <tr>
             <th className="text-left  px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Métrica</th>
@@ -19,7 +19,8 @@ export function EmbudoTablaMensual() {
             <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Julio</th>
             <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Agosto</th>
             <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Septiembre</th>
-            <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Sep vs Ago</th>
+            <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Octubre</th>
+            <th className="text-right px-3 py-2.5 font-semibold text-gray-500 whitespace-nowrap">Oct vs Sep</th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +30,8 @@ export function EmbudoTablaMensual() {
               <td className="px-3 py-2.5 text-right text-gray-500 tabular-nums">{row.jun}</td>
               <td className="px-3 py-2.5 text-right text-gray-500 tabular-nums">{row.jul}</td>
               <td className="px-3 py-2.5 text-right text-gray-500 tabular-nums">{row.ago}</td>
-              <td className="px-3 py-2.5 text-right font-semibold text-gray-700 tabular-nums">{row.sep}</td>
+              <td className="px-3 py-2.5 text-right text-gray-500 tabular-nums">{row.sep}</td>
+              <td className="px-3 py-2.5 text-right font-semibold text-gray-700 tabular-nums">{row.oct}</td>
               <td
                 className="px-3 py-2.5 text-right font-semibold tabular-nums"
                 style={{ color: HIGHLIGHT_COLOR[row.highlight] }}

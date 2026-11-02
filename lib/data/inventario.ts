@@ -1,4 +1,4 @@
-// Datos de rotación de inventario — Kriza, septiembre 2026.
+// Datos de inventario — Kriza. Capital muerto: septiembre 2026 (octubre pendiente del CSV de Shopify).
 // Fuente: "Instantánea de inventario al final del mes - 2026-09-01 - 2026-09-30.csv" (stock diario de Shopify).
 // Rotación = pares vendidos en el mes / stock promedio del mes.
 // Pares vendidos = suma de las bajas diarias de stock de hasta 5 pares. Las bajas mayores en un solo día
@@ -6,28 +6,25 @@
 // (ROXANA, DALILA-II, CARISSA, MIA-V, IVES, GALA, MORAN) y el 18 sep 30 pares de HERA.
 // La columna "Valor del inventario al final" vino en 0 en el export, por eso no se calcula capital en $.
 
-export type ReposicionRow = {
-  modelo:      string
-  rotacion:    number
-  stockInicio: number
-  stockFin:    number
-  situacion:   string
-  critico:     boolean // stock 0 a fin de mes
-  alerta:      boolean // stock bajo, no crítico aún
+// Catálogo agotado: productos bloqueados por falta de stock sobre el total del catálogo.
+// Fuente: conteo manual de Alfonso (no sale del CSV de inventario). Agregar una fila por cada corte nuevo.
+export type CatalogoAgotadoRow = {
+  fecha:      string
+  bloqueados: number
+  total:      number
+  actual?:    boolean // corte más reciente
 }
 
-export const REPOSICION: ReposicionRow[] = [
-  { modelo: "AMAPOLA-II",  rotacion: 1.62, stockInicio: 11, stockFin: 20, situacion: "Se repuso y siguió vendiendo",    critico: false, alerta: false },
-  { modelo: "ORQUIDEA-II", rotacion: 1.53, stockInicio: 15, stockFin: 10, situacion: "Segundo mes seguido arriba de 1,5", critico: false, alerta: false },
-  { modelo: "ZHENITH",     rotacion: 1.14, stockInicio: 23, stockFin: 21, situacion: "28 pares vendidos, top del mes",  critico: false, alerta: false },
-  { modelo: "ROXANA",      rotacion: 0.99, stockInicio: 28, stockFin: 0,  situacion: "En 0 desde 24 sep",               critico: true,  alerta: false },
-  { modelo: "DYER",        rotacion: 0.79, stockInicio: 20, stockFin: 29, situacion: "Repuesto, rota estable",          critico: false, alerta: false },
-  { modelo: "GALA",        rotacion: 0.76, stockInicio: 31, stockFin: 9,  situacion: "Quedan 9 pares",                  critico: false, alerta: true  },
-  { modelo: "MORAN",       rotacion: 0.72, stockInicio: 32, stockFin: 3,  situacion: "Quedan 3 pares",                  critico: false, alerta: true  },
+export const CATALOGO_AGOTADO: CatalogoAgotadoRow[] = [
+  { fecha: "2 sep", bloqueados: 191, total: 702 },
+  { fecha: "9 oct", bloqueados: 215, total: 654 },
+  { fecha: "2 nov", bloqueados: 521, total: 982, actual: true },
 ]
 
-export const REPOSICION_BAJADA =
-  "Solo tres modelos rotaron por encima de 1,0 en septiembre (en agosto fueron siete). AMAPOLA-II y ORQUIDEA-II repiten arriba y ZHENITH fue el más vendido. ROXANA, GALA y MORAN quedaron en cero o casi por una salida de stock el 24 sep, no solo por ventas: si siguen en catálogo, hay que reponerlos."
+export const CATALOGO_AGOTADO_TITULAR = "El catálogo se desbordó. 53% agotado."
+
+export const CATALOGO_AGOTADO_BAJADA =
+  "En dos meses el catálogo pasó de 702 a 982 productos y los bloqueados casi se triplicaron (de 191 a 521). Más de la mitad del catálogo que alimenta los anuncios de catálogo (Ad 93, Ad 99 y Ad 100, el 97% de la inversión de octubre) está sin stock."
 
 export type CapitalMuertoRow = {
   modelo:   string

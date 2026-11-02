@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Reposicion } from "./Reposicion"
+import { CatalogoAgotado } from "./CatalogoAgotado"
 import { CapitalMuerto } from "./CapitalMuerto"
 import { INVENTARIO_CIERRE_PREFIJO, INVENTARIO_CIERRE_DESTACADO } from "@/lib/data/inventario"
 
@@ -10,7 +10,7 @@ export function InventarioPar() {
     <div className="space-y-4">
       <Card className="border-0 shadow-sm">
         <CardContent className="px-5 py-5">
-          <Reposicion />
+          <CatalogoAgotado />
         </CardContent>
       </Card>
 

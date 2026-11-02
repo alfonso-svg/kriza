@@ -53,7 +53,7 @@ export function CapitalMuerto() {
     <div className="space-y-3">
       <div>
         <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-1">
-          Capital muerto
+          Capital muerto · Septiembre 2026
         </p>
         <h3 className="text-base font-bold text-gray-900">{CAPITAL_MUERTO_TITULAR}</h3>
       </div>

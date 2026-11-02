@@ -23,18 +23,24 @@ export function TopAds({ ads }: { ads: AdResult[] }) {
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
       {ads.map((ad) => (
         <div
-          key={ad.image}
+          key={ad.name}
           className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden flex flex-col"
         >
           {/* Imagen del ad — proporción natural sin recorte */}
-          <Image
-            src={ad.image}
-            alt={ad.name}
-            width={0}
-            height={0}
-            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
-            className="w-full h-auto"
-          />
+          {ad.image ? (
+            <Image
+              src={ad.image}
+              alt={ad.name}
+              width={0}
+              height={0}
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 16vw"
+              className="w-full h-auto"
+            />
+          ) : (
+            <div className="aspect-[4/5] grid place-items-center bg-gray-50 text-[11px] text-gray-400">
+              Captura pendiente
+            </div>
+          )}
 
           {/* Métricas */}
           <div className="p-3 flex flex-col gap-2.5 border-t border-gray-50">

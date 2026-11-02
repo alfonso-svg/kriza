@@ -4,7 +4,7 @@
 
 export type AdResult = {
   name:    string
-  image:   string   // path relativo a /public
+  image:   string | null   // path relativo a /public; null = captura pendiente
   spend:   number
   ctr:     number
   compras: number

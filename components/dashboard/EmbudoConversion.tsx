@@ -10,7 +10,7 @@ export function EmbudoConversion() {
     <Card className="border-0 shadow-sm">
       <CardHeader className="pb-1 pt-4 px-5">
         <CardTitle className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-          Embudo de conversión · jun–sep 2026
+          Embudo de conversión · jun–oct 2026
         </CardTitle>
       </CardHeader>
       <CardContent className="px-5 pb-5 pt-1 space-y-5">

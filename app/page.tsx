@@ -24,7 +24,7 @@ import { InventarioPar } from "@/components/dashboard/InventarioPar"
 import { ComprasRoasChart } from "@/components/charts/ComprasRoasChart"
 import { CarritosComprasChart } from "@/components/charts/CarritosComprasChart"
 import { ConversionWebChart } from "@/components/charts/ConversionWebChart"
-import { adsSeptiembre } from "@/lib/data/adsSeptiembre"
+import { adsOctubre } from "@/lib/data/adsOctubre"
 import type { DailyInsight } from "@/lib/meta/types"
 
 // ── Formatters ───────────────────────────────────────────────────────────────
@@ -523,12 +523,12 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        {/* Mejores ads de septiembre */}
+        {/* Mejores ads de octubre */}
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-            Mejores ads · Septiembre 2026
+            Mejores ads · Octubre 2026
           </p>
-          <TopAds ads={adsSeptiembre} />
+          <TopAds ads={adsOctubre} />
         </div>
 
         {/* Histórico mensual */}
@@ -593,7 +593,7 @@ export default function DashboardPage() {
         {/* Rotación de inventario */}
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground mb-3">
-            Rotación de inventario · Septiembre 2026
+            Inventario
           </p>
           <InventarioPar />
         </div>
