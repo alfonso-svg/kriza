@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { ArrowUpDown, ArrowUp, ArrowDown, ChevronDown, ChevronRight } from "lucide-react"
 import {
-  CAPITAL_MUERTO, CAPITAL_MUERTO_TITULAR, CAPITAL_MUERTO_BAJADA, CAPITAL_MUERTO_VIGILANCIA,
+  CAPITAL_MUERTO, CAPITAL_MUERTO_TITULAR,
 } from "@/lib/data/inventario"
 
 type SortKey = "pares" | "rotacion"
@@ -34,7 +34,6 @@ function SortBtn({
 
 export function CapitalMuerto() {
   const [sort, setSort] = useState<{ key: SortKey; dir: SortDir }>({ key: "pares", dir: "desc" })
-  const [showVigilancia, setShowVigilancia] = useState(false)
   const [showAll, setShowAll] = useState(false)
 
   function toggle(key: SortKey) {
@@ -103,35 +102,6 @@ export function CapitalMuerto() {
           </button>
         )}
       </div>
-
-      {/* En vigilancia — colapsable */}
-      <div className="rounded-md border border-gray-100">
-        <button
-          onClick={() => setShowVigilancia(v => !v)}
-          className="w-full flex items-center justify-between px-3 py-2 text-[11px] font-semibold text-gray-400 hover:text-gray-600 transition-colors"
-        >
-          <span className="flex items-center gap-1.5">
-            {showVigilancia ? <ChevronDown size={12} /> : <ChevronRight size={12} />}
-            En vigilancia ({CAPITAL_MUERTO_VIGILANCIA.length})
-          </span>
-          <span className="font-normal">4–7 pares vendidos · no crítico aún</span>
-        </button>
-        {showVigilancia && (
-          <table className="w-full text-xs border-t border-gray-50">
-            <tbody>
-              {CAPITAL_MUERTO_VIGILANCIA.map(row => (
-                <tr key={row.modelo} className="border-t border-gray-50 text-gray-400">
-                  <td className="px-3 py-2 whitespace-nowrap">{row.modelo}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{row.pares} pares</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{row.vendidos} vendidos</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
-
-      <p className="text-sm text-gray-600 leading-relaxed">{CAPITAL_MUERTO_BAJADA}</p>
     </div>
   )
 }

@@ -59,26 +59,34 @@ export const CAPITAL_MUERTO: CapitalMuertoRow[] = [
 
 export const CAPITAL_MUERTO_TITULAR = "~480 pares parados, 41% del inventario"
 
-export const CAPITAL_MUERTO_BAJADA =
-  "Veinte modelos vendieron 3 pares o menos en todo septiembre (en agosto eran quince). MIEL, TOÑA RMC9 y CLARION siguen sin vender y ATENEA, el más vendido de agosto, se repuso y vendió solo 3. Siguen dentro del product set principal, así que consumen impresiones y presupuesto que deberían ir a los modelos que rotan."
-
-export type WatchlistRow = { modelo: string; pares: number; vendidos: number }
-
-export const CAPITAL_MUERTO_VIGILANCIA: WatchlistRow[] = [
-  { modelo: "LALA WH-W06", pares: 45, vendidos: 6 },
-  { modelo: "MORA BF2414", pares: 40, vendidos: 4 },
-  { modelo: "SALOME",      pares: 38, vendidos: 6 },
-  { modelo: "LIENZO",      pares: 35, vendidos: 6 },
-  { modelo: "PILIN",       pares: 29, vendidos: 5 },
-  { modelo: "BECKY",       pares: 28, vendidos: 7 },
-  { modelo: "MADELYN",     pares: 27, vendidos: 6 },
-  { modelo: "BRISA",       pares: 25, vendidos: 5 },
-  { modelo: "ZARA",        pares: 25, vendidos: 4 },
-  { modelo: "MIA-IV",      pares: 20, vendidos: 6 },
-]
-
 export const INVENTARIO_CIERRE_PREFIJO =
   "Se vende lo que gusta y se agota, queda lo que no gusta mes tras mes. El catálogo se está volviendo un stock que nadie quiso y eso es lo que la clienta encuentra cuando llega desde el anuncio. Se debería"
 
 export const INVENTARIO_CIERRE_DESTACADO =
   "evaluar con urgencia hacer promociones y descuentos de esos modelos."
+
+// Reposición de stock (7 nov 2026): 5 días vs 5 días, campañas de venta (Advantage+ y Tráfico Caliente), sin Tráfico IG.
+// Fuente: API de Meta Ads, cuenta 468008112481921.
+export type ReposicionRow = { metrica: string; antes: string; despues: string; var: string; alerta?: boolean }
+
+export const REPOSICION: ReposicionRow[] = [
+  { metrica: "Inversión",        antes: "$182,24", despues: "$193,07", var: "+5,9%" },
+  { metrica: "Compras",          antes: "32",      despues: "69",      var: "+115,6%" },
+  { metrica: "CPA",              antes: "$5,70",   despues: "$2,80",   var: "−50,9%",  alerta: true },
+  { metrica: "ROAS",             antes: "6,70x",   despues: "13,60x",  var: "+103,0%", alerta: true },
+  { metrica: "Visitas",          antes: "3.705",   despues: "6.241",   var: "+68,4%" },
+  { metrica: "Carritos",         antes: "255",     despues: "575",     var: "+125,5%" },
+  { metrica: "Visita → carrito", antes: "6,88%",   despues: "9,21%",   var: "+33,9%" },
+]
+
+export const REPOSICION_TITULAR = "La reposición bajó el CPA a la mitad en 48 horas"
+
+export const REPOSICION_BAJADA =
+  "El 7 de noviembre entró stock nuevo al catálogo. Con una inversión prácticamente igual, las compras se duplicaron y el CPA cayó de $5,70 a $2,80. La tasa de visita a carrito subió de 6,88% a 9,21%: la gente no empezó a llegar más barata, empezó a encontrar lo que buscaba. Es la confirmación directa de lo que viene señalando este reporte desde junio. Cuando el catálogo se vacía el CPA sube y el ROAS cae; cuando se repone, el rendimiento vuelve solo, sin tocar un dólar de pauta."
+
+export const REPOSICION_DESTACADO = "Contra el CPA de octubre ($5,84), la mejora es del 52,1%."
+export const REPOSICION_DESTACADO_DETALLE =
+  "Y con los $193,07 de esos cinco días, al CPA anterior habrían salido 34 compras en lugar de 69."
+
+export const REPOSICION_METODO =
+  "Comparativa de 5 días contra 5 días sobre las campañas de venta (Advantage+ y Tráfico Caliente); excluye Tráfico IG. Fuente: API de Meta Ads, cuenta 468008112481921. Ventana corta y atribución aún en curso: leer como señal temprana, no como resultado consolidado."

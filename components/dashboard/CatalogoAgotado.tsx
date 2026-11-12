@@ -53,6 +53,15 @@ export function CatalogoAgotado() {
       </div>
 
       <p className="text-sm text-gray-600 leading-relaxed">{CATALOGO_AGOTADO_BAJADA}</p>
+
+      <div className="rounded-md border border-gray-100 bg-gray-50/60 px-3 py-2.5">
+        <p className="text-xs text-gray-600 leading-relaxed">
+          <span className="font-semibold text-gray-800">¿Qué es un producto bloqueado?</span>{" "}
+          Es un producto que sigue cargado en el catálogo de Meta pero que figura sin stock en Shopify, así que
+          Meta no puede mostrarlo en los anuncios de catálogo. Vuelve a aparecer solo cuando se repone el stock.
+          Mientras más productos bloqueados, menos variedad tienen los anuncios para mostrarle a cada persona.
+        </p>
+      </div>
     </div>
   )
 }

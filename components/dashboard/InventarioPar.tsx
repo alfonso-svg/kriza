@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { CatalogoAgotado } from "./CatalogoAgotado"
 import { CapitalMuerto } from "./CapitalMuerto"
+import { Reposicion } from "./Reposicion"
 import { INVENTARIO_CIERRE_PREFIJO, INVENTARIO_CIERRE_DESTACADO } from "@/lib/data/inventario"
 
 export function InventarioPar() {
@@ -11,6 +12,12 @@ export function InventarioPar() {
       <Card className="border-0 shadow-sm">
         <CardContent className="px-5 py-5">
           <CatalogoAgotado />
+        </CardContent>
+      </Card>
+
+      <Card className="border-0 shadow-sm">
+        <CardContent className="px-5 py-5">
+          <Reposicion />
         </CardContent>
       </Card>
 
